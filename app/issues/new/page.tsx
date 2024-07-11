@@ -32,13 +32,13 @@ function NewIssuePage() {
         <form className=' space-y-2' onSubmit={handleSubmit(onSubmit)}>
             <TextField.Root  placeholder="Title" {...register("title")} >
             </TextField.Root>
-            {errors.title && <ErrorMessage>{errors.title.message}</ErrorMessage>}
+            <ErrorMessage>{errors.title?.message}</ErrorMessage>
             <Controller
                 name='description'
                 control={control}
                 render={({ field }) => <SimpleMDE placeholder='Description...' {...field} />}
             />
-            {errors.description && <ErrorMessage>{errors.description?.message}</ErrorMessage>}
+             <ErrorMessage>{errors.description?.message}</ErrorMessage>
             <Button>Submit New Issue</Button>
         </form>
         </div>
